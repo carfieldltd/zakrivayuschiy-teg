@@ -31,3 +31,32 @@
   background-repeat: repeat;
   background-attachment: fixed;
 }
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  inline-size: clamp(320px, 100%, var(--max-wdth, 700px));
+  margin-block-end: 100px;
+  padding: clamp(120px, 32dvi, 136px) 0 25px;
+
+  font-family: var(--accent-font, fantasy);
+  font-weight: 400;
+
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+}
+
+.header__logo {
+  font-weight: inherit;
+  font-size: clamp(3.0625rem, 2.7292rem + 1.4815vw, 4.0625rem);
+  text-transform: uppercase;
+}
+
+.header__title {
+  padding-block-start: 20px;
+
+  font-weight: inherit;
+  font-size: clamp(0.875rem, 0.6875rem + 0.8333vw, 1.4375rem);
+  text-transform: uppercase;
+}
