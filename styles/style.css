@@ -199,3 +199,95 @@
 .card__icon-button:focus-visible {
   outline: 2px solid var(--accent-color);
 }
+
+.button {
+  position: relative;
+
+  outline: 2px solid var(--accent-color);
+  transition: box-shadow 0.3s ease;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inline-size: 100%;
+  block-size: 100%;
+  inset-inline-start: 0;
+  inset-block-start: 0;
+
+  background-color: var(--accent-color);
+
+  scale: 0 1;
+  transform-origin: left;
+  transition: scale 0.5s ease-in-out;
+}
+
+.button:hover::before {
+  scale: 1;
+}
+
+.button:hover .button__text {
+  color: var(--bg-color);
+}
+
+.button:hover .footer__icon {
+  color: var(--bg-color);
+}
+
+.button:focus-visible {
+  box-shadow: 5px 5px 0 0 currentColor;
+}
+
+.button:focus {
+  box-shadow: 5px 5px 0 0 currentColor;
+}
+
+.button:focus-within {
+  box-shadow: 5px 5px 0 0 currentColor;
+}
+
+.card__like-button {
+  min-inline-size: 126px;
+  min-block-size: 34px;
+}
+
+.button__text {
+  position: relative;
+  z-index: 1;
+
+  font-family: var(--accent-font, fantasy);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90%;
+
+  transition: color 1s ease;
+}
+
+.footer__save-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  padding: 15px;
+  min-inline-size: 306px;
+  inline-size: min(80vw, 335px);
+
+  background-color: var(--bg-color);
+}
+
+.footer__icon {
+  position: relative;
+  z-index: 1;
+  inline-size: 21px;
+  aspect-ratio: 1/1;
+  transition: color 1s ease;
+}
+
+@media (width <=375px) {
+  .footer__icon {
+    inline-size: 28px;
+  }
+}
