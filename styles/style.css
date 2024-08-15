@@ -129,3 +129,73 @@
 
   animation: moving 0.5s infinite ease-in-out alternate;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 51px;
+  inline-size: clamp(320px, 100%, var(--max-wdth, 700px));
+  padding-block-end: 102px;
+}
+
+.card {
+  font-size: 18px;
+
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+}
+
+.card__title {
+  padding: 3px 10px;
+
+  font-size: inherit;
+  font-variation-settings: "wght" var(--bold-wght, 700);
+  line-height: normal;
+}
+
+.card__picture {
+  object-fit: cover;
+  object-position: center;
+
+  inline-size: 100%;
+  aspect-ratio: 1/1;
+
+  border: 2px solid var(--accent-color, #000);
+}
+
+.card__content {
+  padding: 25px;
+}
+
+.card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+.paragraph {
+  font-variation-settings: "wght" var(--normal-wght, 400);
+  line-height: 116.667%;
+}
+
+.card__controls {
+  display: flex;
+  justify-content: end;
+  padding-block-start: 28px;
+  gap: 9px;
+}
+
+.card__icon-button {
+  block-size: 34px;
+  outline: 2px solid transparent;
+  transition: outline 0.3s ease;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+}
